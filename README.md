@@ -14,6 +14,7 @@
 - Angular
 - RxJS
 - NgRx
+- TailwindCSS
 
 ## Getting Started
 
