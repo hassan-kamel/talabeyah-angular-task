@@ -6,10 +6,10 @@ import { userReducer } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { usersEffects } from './store/effects';
 import { usersServices } from './services/users.services';
-import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [UsersComponent, SearchComponent, UserCardComponent, ErrorComponent],
@@ -17,7 +17,7 @@ import { ErrorComponent } from './components/error/error.component';
     CommonModule,
     StoreModule.forFeature('users', userReducer),
     EffectsModule.forFeature([usersEffects]),
-    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [usersServices],
   exports: [UsersComponent],

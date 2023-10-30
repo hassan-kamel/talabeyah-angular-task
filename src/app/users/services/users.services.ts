@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class usersServices {
   private API = environment.apiUrl;
   private headers = new HttpHeaders({
-    Authorization: `Bearer ${environment.access_token}`,
+    Authorization: `Bearer ${environment.access_token}HKr7AuO689Smx5h78Ry93rHGUJlS93p42Bf2WWiyWykYYOXEIKLRPUiFHyi`,
   });
 
   constructor(private client: HttpClient) {}
