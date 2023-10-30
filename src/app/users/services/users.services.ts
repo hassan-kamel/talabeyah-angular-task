@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { IUser } from '../types/user.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class usersServices {
-  private API = 'https://api.github.com';
+  private API = environment.apiUrl;
   private headers = new HttpHeaders({
-    Authorization: `Bearer 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`,
+    Authorization: `Bearer ${environment.access_token}`,
   });
 
   constructor(private client: HttpClient) {}
