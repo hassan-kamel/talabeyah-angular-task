@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-orange-800 text-white p-5;
+}
+
+input {
+  @apply text-orange-800;
+}
+input::placeholder {
+  @apply text-orange-800;
+}

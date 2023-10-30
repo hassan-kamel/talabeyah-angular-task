@@ -1,0 +1,45 @@
+<!-- Page Bar -->
+<div class="mx-auto max-w-lg text-center mb-5">
+  <h2 class="text-3xl font-bold sm:text-4xl">Github Finder</h2>
+</div>
+
+<!-- Search Bar -->
+<user-search></user-search>
+
+<!-- Page Search State -->
+<div class="relative min-h-[50vh] max-w-5xl mx-auto">
+
+  <div *ngIf="isLoading$ | async"
+    class="absolute top-0 left-0 z-50 w-full min-h-[80vh] bg-orange-800 opacity-80 rounded-xl flex items-center justify-center ">
+    <div class="flex items-center justify-center w-full h-full">
+      <div class="flex justify-center items-center space-x-1 text-lg text-white">
+
+        <svg fill='none' class="w-6 h-6 animate-spin" viewBox="0 0 32 32" xmlns='http://www.w3.org/2000/svg'>
+          <path clip-rule='evenodd'
+            d='M15.165 8.53a.5.5 0 01-.404.58A7 7 0 1023 16a.5.5 0 011 0 8 8 0 11-9.416-7.874.5.5 0 01.58.404z'
+            fill='currentColor' fill-rule='evenodd' />
+        </svg>
+
+
+        <div>Loading ...</div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="error$ | async as error">
+    <user-error [errorMessage]="error"></user-error>
+  </div>
+
+
+
+  <div *ngIf="(users$|async)?.length!==0" class="bg-gray-50 py-6 rounded-xl">
+    <div class="container mx-auto px-6 ">
+
+      <div class="grid items-center gap-6 md:grid-cols-3 lg:grid-cols-4">
+
+        <app-user-card *ngFor="let user of users$ | async" [user]="user"></app-user-card>
+
+      </div>
+    </div>
+  </div>
+</div>
